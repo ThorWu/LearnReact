@@ -7,7 +7,7 @@ function App() {
     data: [],
   });
 
-  //TODO:
+  //TODO:有什么注意点？
   const [count, setCount] = useState({
     todoCount: 0,
     todoCompleteCount: 0,
@@ -24,7 +24,7 @@ function App() {
       todoCount: todoCount,
       todoCompleteCount: todoCompleteCount,
     });
-  }, [state]);
+  }, [state]); //TODO:怎么直接监控todoList?
 
   function handleNewTodoKeyDown(event) {
     if (event.keyCode !== 13) {
