@@ -31,12 +31,12 @@ function App() {
       return;
     }
     console.log(event);
-    let list = state.data;
+    let list = [...state.data];
     list.push({
       task: event.target.value,
       complete: false,
     });
-    list = [...list]
+    // list = [...list]
     setState({
       data: list,
     });
