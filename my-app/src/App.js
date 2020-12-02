@@ -24,7 +24,7 @@ function App() {
       todoCount: todoCount,
       todoCompleteCount: todoCompleteCount,
     });
-  }, [state]); //TODO:怎么直接监控todoList?
+  }, [state.data]); //TODO:怎么直接监控todoList?
 
   function handleNewTodoKeyDown(event) {
     if (event.keyCode !== 13) {
@@ -36,6 +36,7 @@ function App() {
       task: event.target.value,
       complete: false,
     });
+    list = [...list]
     setState({
       data: list,
     });
@@ -44,6 +45,7 @@ function App() {
   function handleDeleteTask(task) {
     console.log("deleteTask" + task + typeof task);
     let list = state.data.filter((item) => item.task != task);
+    list = [...list]
     setState({
       data: list,
     });
@@ -57,7 +59,7 @@ function App() {
         item.complete = item.complete == true ? false : true;
       }
     });
-
+    list = [...list]
     setState({
       data: list,
     });
